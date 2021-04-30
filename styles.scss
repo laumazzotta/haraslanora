@@ -1,0 +1,299 @@
+// TIPOGRAFIAS
+
+$font-family-primary: 'Josefin Sans', sans-serif;
+$font-family-secondary: 'Josefin Slab', serif;
+$font-family-tertiary: 'Nunito', sans-serif;
+
+.text-josefin-sans {
+    font-family: $font-family-primary;
+}
+
+.text-josefin-slab {
+    font-family: $font-family-secondary;
+}
+
+.text-nunito {
+    font-family: $font-family-tertiary;
+}
+
+// COLORES
+
+$primary: #5207F2;
+$paleta1: #AB05F2;
+$paleta2: #7D07F2;
+$paleta3: #23D9B7;
+$paleta4: #D7F205;
+$textos: #455A64;
+
+.gradient-primary {
+    background: rgb(171,5,242);
+    background: linear-gradient(131deg, rgba(171,5,242,1) 0%, rgba(125,7,242,1) 25%, rgba(82,7,242,1) 50%, rgba(35,217,183,1) 81%, rgba(120,229,99,1) 93%, rgba(215,242,5,1) 100%);
+}
+
+.gradient-secondary {
+    background: rgb(171,5,242);
+    background: linear-gradient(131deg, rgba(171,5,242,1) 0%, rgba(125,7,242,1) 44%, rgba(35,217,183,1) 100%);
+}
+
+.gradient-tertiary {
+    background: rgb(215,242,5);
+    background: linear-gradient(131deg, rgba(215,242,5,1) 0%, rgba(35,217,183,1) 100%);
+}
+
+.gradient-btn {
+    background: rgb(82,36,238);
+    background: linear-gradient(131deg, rgba(82,36,238,1) 0%, rgba(35,217,183,1) 100%);
+}
+
+.white {
+    color: white;
+}
+
+.color-azul {
+    color: $primary;
+}
+
+.color-magenta {
+    color: $paleta1;
+}
+
+.color-violeta {
+    color: $paleta2;
+}
+
+.color-verde {
+    color: $paleta3;
+}
+
+.color-amarillo {
+    color: $paleta4;
+}
+
+.color-textos {
+    color: $textos;
+}
+
+// UTILS
+
+html
+body {
+    height: 100%;
+}
+
+.hero-background {
+    background-image: url(images/header-back-web-1.jpg);
+    height: 120vh;
+    // background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.nav-link{
+    color: white;
+    margin: auto 2rem;
+    width: fit-content;
+    position: relative;
+    display: block;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover{
+    color: $paleta3;
+    transition: all 1s;
+}
+
+.nav-link:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: $paleta3;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.nav-link:hover:before{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.navbar {
+    display: inline-block;
+    position: sticky;
+    top: 0;
+    height: 145px;
+    width: 100%;
+    background: transparent;
+    transition: .32s;
+}
+
+.fixed-navbar {
+    font-size: .8rem;
+    position: fixed;
+    height: 20px;
+    padding: 2rem !important;
+    transition: .25s;
+    z-index: 100;
+    background: linear-gradient(131deg, rgba(171, 5, 242, 1) 0%, rgba(125,7,242,1) 25%, rgba(82,7,242,1) 50%, rgba(35,217,183,1) 81%, rgba(120,229,99,1) 93%, rgba(215,242,5,1) 100%);
+    
+}
+
+
+.navbar-brand-scroll {
+    width: 50px;
+}
+
+.hero-title > h1{
+    text-shadow: 2px 2px 4px #0000006d;
+    line-height: inherit;
+    letter-spacing: 2px;
+}
+
+.hero-title > h2 {
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
+span {
+    display: inline-block;
+  }
+
+.btn-primary {
+    font-family: $font-family-tertiary;
+    color: $primary;
+    background-color: white;
+    border-color: white;
+    
+}
+.btn-primary:hover{
+    color: white;
+    background-color: $paleta3;
+    border-color: $paleta3;
+}
+.btn-primary:active{
+    color: white;
+    background-color: $paleta3;
+    border-color: $paleta3;
+}
+.btn-primary:focus{
+    color: white;
+    background-color: $paleta3;
+    border-color: $paleta3;
+}
+
+.rrss-header {
+    font-size: 1.5rem;
+}
+
+.dots {
+    left: -30%;
+    top: -150px;
+    z-index: -10;
+}
+
+// ANIMACIONES
+
+#main-logo {
+    animation: logo-fill 2s ease-in-out forwards 1.5s;
+}
+
+#main-logo path {
+    stroke-dasharray: 600px;
+    stroke-dashoffset: 600px;
+    animation: logo-anim 3s ease-in-out forwards;
+    
+}
+
+@keyframes logo-anim {
+    to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes logo-fill {
+    from{
+        fill: transparent;
+    }
+    to {
+        fill: white;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+      -webkit-transform: translate3d(-150%, 0, 0);
+      transform: translate3d(-150%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .slideInLeft {
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+  }
+
+  .back-3 {
+    display: inline-block;
+    position: fixed;
+    bottom: -15%;
+    left: 0;
+    animation: path 1s linear forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  }
+
+//   @keyframes path {
+//     to {
+//       bottom: 100%;
+      
+//     }
+//   }
+
+  .hero-title {
+    display: inline-block;
+    left: 0;
+    top: 200px;
+    position: fixed;
+    animation: hero-scroll .5s linear forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  }
+
+  @keyframes hero-scroll {
+    to {
+      transform: translateX(-800px);
+      opacity: 0;
+      
+    }}
+
+    .subheader-path {
+        display: inline-block;
+        left: -800px;
+        top: 100px;
+        z-index: -1;
+        position: fixed;
+        animation: subheader-path 1s linear forwards;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1s);
+    }
+    
+    @keyframes subheader-path {
+        to {
+            transform: translateX(1000px);
+            
+    }}
+
+    .subheader-icon {
+        z-index: 0;
+        top: 200px;
+        left: 410px;
+    }
