@@ -1,0 +1,406 @@
+@font-face {
+  font-family: 'tt_commonslight';
+  src: url("/fonts/ttcommons-light-webfont.woff2") format("woff2"), url("/fonts/ttcommons-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'tt_commonsmedium';
+  src: url("/fonts/ttcommons-medium-webfont.woff2") format("woff2"), url("/fonts/ttcommons-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'tt_commonsmedium_italic';
+  src: url("/fonts/ttcommons-mediumitalic-webfont.woff2") format("woff2"), url("/fonts/ttcommons-mediumitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'tt_commonsregular';
+  src: url("/fonts/ttcommons-regular-webfont.woff2") format("woff2"), url("/fonts/ttcommons-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-TTCommonsLight {
+  font-family: "tt_commonslight";
+}
+
+.text-TTCommonsMedium {
+  font-family: "tt_commonsmedium";
+}
+
+.text-TTCommonsItalic {
+  font-family: "tt_commonsmedium_italic";
+}
+
+.text-TTCommonsRegular {
+  font-family: "tt_commonsregular";
+}
+
+.white {
+  color: white;
+}
+
+.color-green {
+  color: #384938;
+}
+
+.color-lightGreen {
+  color: #CBD5CB;
+}
+
+.color-creamGreen {
+  color: #F3F3F3;
+}
+
+.bg-dark {
+  background-color: #384938 !important;
+}
+
+.bg-light {
+  background-color: #CBD5CB !important;
+}
+
+.bg-body {
+  background-color: #F3F3F3 !important;
+}
+
+.bg-lightgreen {
+  background-color: #A2ACA2;
+}
+
+.h-60 {
+  height: 60%;
+}
+
+.h-20 {
+  height: 20%;
+}
+
+.h-30 {
+  height: 30%;
+}
+
+.p-lg-6 {
+  padding: 4rem !important;
+}
+
+.h-lg-100 {
+  height: 100%;
+}
+
+.w-35 {
+  width: 35%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #384938 !important;
+}
+
+html
+body {
+  height: 100%;
+}
+
+.hero-background {
+  background-image: url(images/img-hero.png);
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav-footer {
+  letter-spacing: .1rem;
+}
+
+#home-hero {
+  letter-spacing: 1rem;
+  display: inline-block;
+  -webkit-animation: hero-scroll .5s linear forwards;
+          animation: hero-scroll .5s linear forwards;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+}
+
+@-webkit-keyframes hero-scroll {
+  to {
+    font-size: 2rem;
+    letter-spacing: .5rem;
+  }
+}
+
+@keyframes hero-scroll {
+  to {
+    font-size: 2rem;
+    letter-spacing: .5rem;
+  }
+}
+
+#main-logo {
+  display: inline-block;
+  opacity: 0;
+  -webkit-animation: logoScroll .1s linear forwards;
+          animation: logoScroll .1s linear forwards;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+}
+
+#closeNav,
+.navbar {
+  z-index: 1000;
+}
+
+@-webkit-keyframes logoScroll {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes logoScroll {
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar-toggler:focus {
+  -webkit-box-shadow: 0 0 0 0rem;
+          box-shadow: 0 0 0 0rem;
+}
+
+.navbar-toggler-icon {
+  font-size: 2.25rem;
+}
+
+.overlay {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  background-color: #384938;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+}
+
+.overlay-content > a {
+  color: #F3F3F3;
+  cursor: pointer;
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  display: block;
+  bottom: 0;
+  left: 0;
+}
+
+.overlay-content > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #CBD5CB;
+  opacity: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.overlay-content > a:hover:before {
+  opacity: 1;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.overlay-content > a:hover {
+  color: #CBD5CB;
+}
+
+.nav-hero {
+  letter-spacing: .5rem;
+}
+
+.text-about {
+  letter-spacing: .5rem;
+  line-height: 2.5rem;
+}
+
+.heading-haras {
+  letter-spacing: .5rem;
+  line-height: .7;
+  text-align: left;
+}
+
+.texto-haras {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.texto-about-2 {
+  padding: 5rem 0;
+}
+
+.about-background {
+  background-image: url(images/blouc-1000680.jpg);
+  height: 100%;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nombresYeguas {
+  letter-spacing: .1rem;
+}
+
+.botonDescargar {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.botonDescargar:hover {
+  background-color: #384938 !important;
+  color: #CBD5CB;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.generaciones-background {
+  background-image: url(images/L1000106.jpeg);
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.linkVerMas:hover,
+.mailVentas:hover {
+  color: #A2ACA2;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.novedades-background {
+  background-image: url(images/blouc-1000535.jpeg);
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 991px) {
+  #home-hero {
+    letter-spacing: .2rem;
+    padding: 2.5rem 5rem;
+    display: inline-block;
+    opacity: 1;
+    -webkit-animation: logoScroll .1s linear forwards;
+            animation: logoScroll .1s linear forwards;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+    -webkit-animation-delay: calc(var(--scroll) * -1s);
+            animation-delay: calc(var(--scroll) * -1s);
+  }
+  #main-logo {
+    display: inline-block;
+    opacity: 1;
+    -webkit-animation: logoScroll .1s linear forwards;
+            animation: logoScroll .1s linear forwards;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+    -webkit-animation-delay: calc(var(--scroll) * -1s);
+            animation-delay: calc(var(--scroll) * -1s);
+  }
+  .menuBarsMobile {
+    display: inline-block;
+    opacity: 1;
+    -webkit-animation: logoScroll .1s linear forwards;
+            animation: logoScroll .1s linear forwards;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+    -webkit-animation-delay: calc(var(--scroll) * -1s);
+            animation-delay: calc(var(--scroll) * -1s);
+  }
+  @-webkit-keyframes logoScroll {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes logoScroll {
+    to {
+      opacity: 0;
+    }
+  }
+  .text-about {
+    letter-spacing: .3rem;
+    line-height: 2rem;
+  }
+  .heading-haras {
+    text-align: center;
+  }
+  .overlay-content {
+    top: 0;
+  }
+  .h-xs-50 {
+    height: 50%;
+  }
+  .h-xs-100 {
+    height: 100%;
+  }
+  .w-xs-70 {
+    width: 70% !important;
+  }
+  .texto-about-2 {
+    padding: 3rem 0;
+  }
+  .nombresYeguas {
+    font-family: "tt_commonslight" !important;
+  }
+  .nombresPadres {
+    font-size: 1rem !important;
+  }
+  .botonDescargar {
+    font-size: 1rem !important;
+  }
+  .novedades-background {
+    background-image: url(images/blouc-1000535-mobile.jpg);
+    height: 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

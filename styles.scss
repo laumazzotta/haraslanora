@@ -1,79 +1,130 @@
 // TIPOGRAFIAS
 
-$font-family-primary: 'Josefin Sans', sans-serif;
-$font-family-secondary: 'Josefin Slab', serif;
-$font-family-tertiary: 'Nunito', sans-serif;
+@font-face {
+    font-family: 'tt_commonslight';
+    src: url('/fonts/ttcommons-light-webfont.woff2') format('woff2'),
+         url('/fonts/ttcommons-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-.text-josefin-sans {
+@font-face {
+    font-family: 'tt_commonsmedium';
+    src: url('/fonts/ttcommons-medium-webfont.woff2') format('woff2'),
+         url('/fonts/ttcommons-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tt_commonsmedium_italic';
+    src: url('/fonts/ttcommons-mediumitalic-webfont.woff2') format('woff2'),
+         url('/fonts/ttcommons-mediumitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tt_commonsregular';
+    src: url('/fonts/ttcommons-regular-webfont.woff2') format('woff2'),
+         url('/fonts/ttcommons-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-family-primary: 'tt_commonslight';
+$font-family-secondary: 'tt_commonsmedium';
+$font-family-tertiary: 'tt_commonsmedium_italic';
+$font-family-cuaternary: 'tt_commonsregular';
+
+.text-TTCommonsLight {
     font-family: $font-family-primary;
 }
 
-.text-josefin-slab {
+.text-TTCommonsMedium {
     font-family: $font-family-secondary;
 }
 
-.text-nunito {
+.text-TTCommonsItalic {
     font-family: $font-family-tertiary;
+}
+
+.text-TTCommonsRegular {
+    font-family: $font-family-cuaternary;
 }
 
 // COLORES
 
-$primary: #5207F2;
-$paleta1: #AB05F2;
-$paleta2: #7D07F2;
-$paleta3: #23D9B7;
-$paleta4: #D7F205;
-$textos: #455A64;
-
-.gradient-primary {
-    background: rgb(171,5,242);
-    background: linear-gradient(131deg, rgba(171,5,242,1) 0%, rgba(125,7,242,1) 25%, rgba(82,7,242,1) 50%, rgba(35,217,183,1) 81%, rgba(120,229,99,1) 93%, rgba(215,242,5,1) 100%);
-}
-
-.gradient-secondary {
-    background: rgb(171,5,242);
-    background: linear-gradient(131deg, rgba(171,5,242,1) 0%, rgba(125,7,242,1) 44%, rgba(35,217,183,1) 100%);
-}
-
-.gradient-tertiary {
-    background: rgb(215,242,5);
-    background: linear-gradient(131deg, rgba(215,242,5,1) 0%, rgba(35,217,183,1) 100%);
-}
-
-.gradient-btn {
-    background: rgb(82,36,238);
-    background: linear-gradient(131deg, rgba(82,36,238,1) 0%, rgba(35,217,183,1) 100%);
-}
+$primary: #384938;
+$secondary: #CBD5CB;
+$terciary: #F3F3F3;
+$cuaternary: #A2ACA2;
 
 .white {
     color: white;
 }
 
-.color-azul {
+.color-green {
     color: $primary;
 }
 
-.color-magenta {
-    color: $paleta1;
+.color-lightGreen {
+    color: $secondary;
 }
 
-.color-violeta {
-    color: $paleta2;
+.color-creamGreen {
+    color: $terciary;
 }
 
-.color-verde {
-    color: $paleta3;
+.bg-dark {
+    background-color: $primary !important;
 }
 
-.color-amarillo {
-    color: $paleta4;
+.bg-light {
+    background-color: $secondary !important;
 }
 
-.color-textos {
-    color: $textos;
+.bg-body {
+    background-color: $terciary !important;
+}
+
+.bg-lightgreen {
+    background-color: $cuaternary;
 }
 
 // UTILS
+
+.h-60 {
+    height: 60%;
+}
+
+.h-20 {
+    height: 20%;
+}
+
+.h-30 {
+    height: 30%;
+}
+
+.p-lg-6 {
+    padding: 4rem !important;
+}
+
+.h-lg-100 {
+    height: 100%;
+}
+
+.w-35 {
+    width: 35%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.border-bottom {
+    border-bottom: 1px solid $primary !important;
+}
 
 html
 body {
@@ -81,18 +132,81 @@ body {
 }
 
 .hero-background {
-    background-image: url(images/header-back-web-1.jpg);
-    height: 120vh;
-    // background-attachment: fixed;
+    background-image: url(images/img-hero.png);
+    height: 100%;
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.nav-footer {
+    letter-spacing: .1rem;
+}
 
-.nav-link{
-    color: white;
-    margin: auto 2rem;
+#home-hero {
+    letter-spacing: 1rem;
+    display: inline-block;
+    animation: hero-scroll .5s linear forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  }
+
+@keyframes hero-scroll {
+    to {
+      font-size: 2rem;
+      letter-spacing: .5rem;
+    }}
+
+#main-logo {
+    display: inline-block;
+    opacity: 0;
+    animation: logoScroll .1s linear forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+}
+
+#closeNav,
+.navbar {
+    z-index: 1000;
+}
+
+@keyframes logoScroll {
+    to {
+      opacity: 1;
+}}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0rem;
+}
+
+.navbar-toggler-icon {
+    font-size: 2.25rem;
+}
+
+.overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background-color: $primary;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay-content > a {
+    color: $terciary;
+    cursor: pointer;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
     width: fit-content;
     position: relative;
     display: block;
@@ -100,200 +214,183 @@ body {
     left: 0;
 }
 
-.nav-link:hover{
-    color: $paleta3;
-    transition: all 1s;
-}
-
-.nav-link:before{
+.overlay-content > a:before{
     content: "";
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 1px;
     bottom: 0;
     left: 0;
-    background-color: $paleta3;
+    background-color: $secondary;
     opacity: 0;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
 }
-.nav-link:hover:before{
+
+.overlay-content > a:hover:before{
     opacity: 1;
     transform: scaleX(1);
 }
 
-.navbar {
-    display: inline-block;
-    position: sticky;
-    top: 0;
-    height: 145px;
-    width: 100%;
-    background: transparent;
-    transition: .32s;
-}
-
-.fixed-navbar {
-    font-size: .8rem;
-    position: fixed;
-    height: 20px;
-    padding: 2rem !important;
-    transition: .25s;
-    z-index: 100;
-    background: linear-gradient(131deg, rgba(171, 5, 242, 1) 0%, rgba(125,7,242,1) 25%, rgba(82,7,242,1) 50%, rgba(35,217,183,1) 81%, rgba(120,229,99,1) 93%, rgba(215,242,5,1) 100%);
+.overlay-content > a:hover {
+    color: $secondary;
     
 }
 
-
-.navbar-brand-scroll {
-    width: 50px;
+.nav-hero {
+    letter-spacing: .5rem;
 }
 
-.hero-title > h1{
-    text-shadow: 2px 2px 4px #0000006d;
-    line-height: inherit;
-    letter-spacing: 2px;
+.text-about {
+    letter-spacing: .5rem;
+    line-height: 2.5rem;
 }
 
-.hero-title > h2 {
-    font-weight: 200;
-    font-size: 1.5rem;
+
+.heading-haras {
+    letter-spacing: .5rem;
+    line-height: .7;
+    text-align: left;
 }
 
-span {
-    display: inline-block;
-  }
-
-.btn-primary {
-    font-family: $font-family-tertiary;
-    color: $primary;
-    background-color: white;
-    border-color: white;
-    
-}
-.btn-primary:hover{
-    color: white;
-    background-color: $paleta3;
-    border-color: $paleta3;
-}
-.btn-primary:active{
-    color: white;
-    background-color: $paleta3;
-    border-color: $paleta3;
-}
-.btn-primary:focus{
-    color: white;
-    background-color: $paleta3;
-    border-color: $paleta3;
+.texto-haras {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-.rrss-header {
-    font-size: 1.5rem;
+.texto-about-2 {
+    padding: 5rem 0;
 }
 
-.dots {
-    left: -30%;
-    top: -150px;
-    z-index: -10;
+.about-background {
+    background-image: url(images/blouc-1000680.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-// ANIMACIONES
-
-#main-logo {
-    animation: logo-fill 2s ease-in-out forwards 1.5s;
+.nombresYeguas {
+    letter-spacing: .1rem;
 }
 
-#main-logo path {
-    stroke-dasharray: 600px;
-    stroke-dashoffset: 600px;
-    animation: logo-anim 3s ease-in-out forwards;
-    
+.botonDescargar {
+    max-width: fit-content;
 }
 
-@keyframes logo-anim {
-    to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes logo-fill {
-    from{
-        fill: transparent;
-    }
-    to {
-        fill: white;
-    }
+.botonDescargar:hover {
+    background-color: $primary !important;
+    color: $secondary;
+    transition: all .8s;
 }
 
-@keyframes slideInLeft {
-    from {
-      -webkit-transform: translate3d(-150%, 0, 0);
-      transform: translate3d(-150%, 0, 0);
-      visibility: visible;
-    }
-  
-    to {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-  }
+.generaciones-background {
+    background-image: url(images/L1000106.jpeg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-  .slideInLeft {
-    -webkit-animation-name: slideInLeft;
-    animation-name: slideInLeft;
-  }
+.linkVerMas:hover,
+.mailVentas:hover {
+    color: $cuaternary;
+    transition: all .8s;
+}
 
-  .back-3 {
-    display: inline-block;
-    position: fixed;
-    bottom: -15%;
-    left: 0;
-    animation: path 1s linear forwards;
-    animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -1s);
-  }
+.novedades-background {
+    background-image: url(images/blouc-1000535.jpeg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-//   @keyframes path {
-//     to {
-//       bottom: 100%;
-      
-//     }
-//   }
+// MOBILE --------------------------- //
 
-  .hero-title {
-    display: inline-block;
-    left: 0;
-    top: 200px;
-    position: fixed;
-    animation: hero-scroll .5s linear forwards;
-    animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -1s);
-  }
+@media screen and (max-width: 991px) {
 
-  @keyframes hero-scroll {
-    to {
-      transform: translateX(-800px);
-      opacity: 0;
-      
-    }}
-
-    .subheader-path {
+    #home-hero {
+        letter-spacing: .2rem;
+        padding: 2.5rem 5rem;
         display: inline-block;
-        left: -800px;
-        top: 100px;
-        z-index: -1;
-        position: fixed;
-        animation: subheader-path 1s linear forwards;
+        opacity: 1;
+        animation: logoScroll .1s linear forwards;
         animation-play-state: paused;
         animation-delay: calc(var(--scroll) * -1s);
     }
     
-    @keyframes subheader-path {
-        to {
-            transform: translateX(1000px);
-            
-    }}
-
-    .subheader-icon {
-        z-index: 0;
-        top: 200px;
-        left: 410px;
+    #main-logo {
+        display: inline-block;
+        opacity: 1;
+        animation: logoScroll .1s linear forwards;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1s);
     }
+
+    .menuBarsMobile {
+        display: inline-block;
+        opacity: 1;
+        animation: logoScroll .1s linear forwards;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1s);
+    }
+
+    @keyframes logoScroll {
+        to {
+          opacity: 0;
+    }}
+    
+    .text-about {
+        letter-spacing: .3rem;
+        line-height: 2rem;
+    }
+
+    .heading-haras {
+        text-align: center;
+    }
+
+    .overlay-content {
+        top: 0;
+    }
+
+    .h-xs-50 {
+        height: 50%;
+    }
+    
+    .h-xs-100 {
+        height: 100%;
+    }
+
+    .w-xs-70 {
+        width: 70% !important;
+    }
+
+    .texto-about-2 {
+        padding: 3rem 0;
+    }
+
+    .nombresYeguas {
+        font-family: $font-family-primary !important;
+    }
+
+    .nombresPadres {
+        font-size: 1rem !important;
+    }
+
+    .botonDescargar {
+        font-size: 1rem !important;
+    }
+
+    .novedades-background {
+        background-image: url(images/blouc-1000535-mobile.jpg);
+        height: 50%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
