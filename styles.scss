@@ -313,6 +313,15 @@ body {
 
 @media screen and (max-width: 991px) {
 
+    .hero-background {
+        background-image: url(images/img-hero.png);
+        height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
     #home-hero {
         letter-spacing: .2rem;
         padding: 2.5rem 5rem;
