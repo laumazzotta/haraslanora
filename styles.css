@@ -118,6 +118,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 .nav-footer {
@@ -276,6 +277,7 @@ body {
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 .nombresYeguas {
@@ -302,6 +304,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 .linkVerMas:hover,
@@ -327,7 +330,8 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    width: 100%;
   }
   #home-hero {
     letter-spacing: .2rem;
@@ -409,6 +413,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
