@@ -327,11 +327,34 @@ body {
   .hero-background {
     background-image: url(images/img-hero.png);
     height: 100%;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    max-width: 100%;
+  }
+  .about-background {
+    background-image: url(images/blouc-1000680.jpg);
+    height: 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+  .generaciones-background {
+    background-image: url(images/L1000106.jpeg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+  .novedades-background {
+    background-image: url(images/blouc-1000535-mobile.jpg);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
   }
   #home-hero {
     letter-spacing: .2rem;
@@ -405,15 +428,6 @@ body {
   }
   .botonDescargar {
     font-size: 1rem !important;
-  }
-  .novedades-background {
-    background-image: url(images/blouc-1000535-mobile.jpg);
-    height: 50%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
