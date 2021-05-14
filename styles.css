@@ -437,5 +437,8 @@ body {
   .botonDescargar {
     font-size: 1rem !important;
   }
+  .imagen-novedades {
+    height: 100%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
