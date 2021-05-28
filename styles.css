@@ -200,8 +200,8 @@ body {
   left: 0;
   background-color: #384938;
   overflow: hidden;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .overlay-content {
@@ -365,12 +365,12 @@ body {
     max-width: 100%;
   }
   #home-hero {
-    letter-spacing: .2rem;
-    padding: 2.5rem 5rem;
+    letter-spacing: .1rem;
+    padding: 2.7rem 5.5rem;
     display: inline-block;
     opacity: 1;
-    -webkit-animation: logoScroll .1s linear forwards;
-            animation: logoScroll .1s linear forwards;
+    -webkit-animation: heroScroll .1s linear forwards;
+            animation: heroScroll .1s linear forwards;
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
     -webkit-animation-delay: calc(var(--scroll) * -1s);
@@ -379,12 +379,22 @@ body {
   #main-logo {
     display: inline-block;
     opacity: 1;
-    -webkit-animation: logoScroll .1s linear forwards;
-            animation: logoScroll .1s linear forwards;
+    -webkit-animation: heroScroll .1s linear forwards;
+            animation: heroScroll .1s linear forwards;
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
     -webkit-animation-delay: calc(var(--scroll) * -1s);
             animation-delay: calc(var(--scroll) * -1s);
+  }
+  @-webkit-keyframes heroScroll {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes heroScroll {
+    to {
+      opacity: 0;
+    }
   }
   .menuBarsMobile {
     display: inline-block;
@@ -395,15 +405,39 @@ body {
             animation-play-state: paused;
     -webkit-animation-delay: calc(var(--scroll) * -1s);
             animation-delay: calc(var(--scroll) * -1s);
+    padding: 3rem 1rem 0 0;
+    margin-right: 1rem;
   }
   @-webkit-keyframes logoScroll {
     to {
-      opacity: 0;
+      width: 25px;
+      padding: 1rem .5rem 0 0;
+      margin-right: 0;
     }
   }
   @keyframes logoScroll {
     to {
-      opacity: 0;
+      width: 25px;
+      padding: 1rem .5rem 0 0;
+      margin-right: 0;
+    }
+  }
+  .navbar-toggler-icon {
+    -webkit-animation: navbarScroll .1s linear forwards;
+            animation: navbarScroll .1s linear forwards;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+    -webkit-animation-delay: calc(var(--scroll) * -1s);
+            animation-delay: calc(var(--scroll) * -1s);
+  }
+  @-webkit-keyframes navbarScroll {
+    to {
+      font-size: 1.25rem;
+    }
+  }
+  @keyframes navbarScroll {
+    to {
+      font-size: 1.25rem;
     }
   }
   .text-about {
