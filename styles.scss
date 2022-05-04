@@ -126,8 +126,16 @@ $cuaternary: #A2ACA2;
     width: 80%;
 }
 
+.mw-50 {
+    max-width: 50%;
+}
+
 .border-bottom {
     border-bottom: 1px solid $primary !important;
+}
+
+ul {
+    list-style-type: none;
 }
 
 html
@@ -281,14 +289,49 @@ body {
     letter-spacing: .1rem;
 }
 
+.listadoYeguas > li:nth-child(odd) {
+    background-color: #A2ACA2;
+    // margin-right: .5rem;
+}
+
+.listadoYeguas > li:nth-child(even) {
+    background-color: #CBD5CB;
+}
+
 .botonDescargar {
     max-width: fit-content;
 }
 
+.botonVerMas > svg,
+.botonDescargar {
+    transition: all .5s;
+}
+
+.botonVerMas > svg:hover {
+    transform: scale(1.2);
+    transition: all .5s;
+}
+
 .botonDescargar:hover {
-    background-color: $primary !important;
-    color: $secondary;
-    transition: all .8s;
+    background-color: $secondary !important;
+    color: $primary;
+    transition: all .5s;
+}
+
+.modal, .modal-dialog {
+    background-color: transparent !important;
+}
+
+.modal-dialog {
+    max-width: 1000px;
+}
+
+.modal-header {
+    background-color: #F3F3F3 !important;
+}
+
+.modal-body {
+    background-color: $cuaternary;
 }
 
 .generaciones-background {
@@ -436,6 +479,10 @@ body {
 
     .w-xs-70 {
         width: 70% !important;
+    }
+
+    .w-xs-100 {
+        width: 100% !important;
     }
 
     .texto-about-2 {

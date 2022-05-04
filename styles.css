@@ -106,8 +106,16 @@
   width: 80%;
 }
 
+.mw-50 {
+  max-width: 50%;
+}
+
 .border-bottom {
   border-bottom: 1px solid #384938 !important;
+}
+
+ul {
+  list-style-type: none;
 }
 
 html
@@ -288,17 +296,54 @@ body {
   letter-spacing: .1rem;
 }
 
+.listadoYeguas > li:nth-child(odd) {
+  background-color: #A2ACA2;
+}
+
+.listadoYeguas > li:nth-child(even) {
+  background-color: #CBD5CB;
+}
+
 .botonDescargar {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
+.botonVerMas > svg,
+.botonDescargar {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.botonVerMas > svg:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 .botonDescargar:hover {
-  background-color: #384938 !important;
-  color: #CBD5CB;
-  -webkit-transition: all .8s;
-  transition: all .8s;
+  background-color: #CBD5CB !important;
+  color: #384938;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.modal, .modal-dialog {
+  background-color: transparent !important;
+}
+
+.modal-dialog {
+  max-width: 1000px;
+}
+
+.modal-header {
+  background-color: #F3F3F3 !important;
+}
+
+.modal-body {
+  background-color: #A2ACA2;
 }
 
 .generaciones-background {
@@ -458,6 +503,9 @@ body {
   }
   .w-xs-70 {
     width: 70% !important;
+  }
+  .w-xs-100 {
+    width: 100% !important;
   }
   .texto-about-2 {
     padding: 3rem 0;
